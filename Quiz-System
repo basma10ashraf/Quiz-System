@@ -1,12 +1,11 @@
 .MODEL SMALL
 .STACK 100H
-
 .DATA    
 
 VAR1 DB '                ...*** WELCOME TO YOUR QUIZ ****...$'
 VAR2 DB 'Rules : $'
-VAR3 DB '*. For Every Correct answer you will get 1 point.$'
-VAR4 DB '*. For Every Wrong answer 1 Point will cut from your total point.$'
+VAR3 DB ' For Every Correct answer you will get 1 point.$'
+VAR4 DB ' For Every Wrong answer 1 Point will cut from your total point.$'
 VAR5 DB 'Press Enter to start the quiz : $'
 VAR6 DB 'Right Answer....$'
 VAR7 DB 'Wrong Answer....$'
@@ -14,6 +13,7 @@ VAR8 DB 'You have successfully completed your quiz.$'
 VAR9 DB 'Your Total obtained point is : $'
 VAR10 DB 'Press 1 to Re-attempt quiz or 0 to Exit.$' 
 VAR11 DB '                    *** best wishes.! ***$'
+
 Q1 DB '1. the purpose of the microprocessor is to control$'
 QA1 DB '   a) memory    b) taskes    c) processing$'
 Q2 DB '2. the intel 8086 microprocessor is a ........processor$'
