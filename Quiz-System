@@ -1,18 +1,22 @@
-.MODEL SMALL
+  .MODEL SMALL
 .STACK 100H
+
 .DATA    
 
 VAR1 DB '                ...*** WELCOME TO YOUR QUIZ ****...$'
 VAR2 DB 'Rules : $'
-VAR3 DB ' For Every Correct answer you will get 1 point.$'
-VAR4 DB ' For Every Wrong answer 1 Point will cut from your total point.$'
+VAR3 DB '*. For Every Correct answer you will get 1 point.$'
+VAR4 DB '*. For Every Wrong answer 1 Point will cut from your total point.$'
 VAR5 DB 'Press Enter to start the quiz : $'
+
+
 VAR6 DB 'Right Answer....$'
 VAR7 DB 'Wrong Answer....$'
 VAR8 DB 'You have successfully completed your quiz.$'
 VAR9 DB 'Your Total obtained point is : $'
-VAR10 DB 'Press 1 to Re-attempt quiz or 0 to Exit.$' 
-VAR11 DB '                    *** best wishes.! ***$'
+VAR10 DB 'Press 1 to Re-attempt quiz or 0 to Exit.$'   
+VAR11 DB '                    *** best wishes.! ***$' 
+
 
 Q1 DB '1. the purpose of the microprocessor is to control$'
 QA1 DB '   a) memory    b) taskes    c) processing$'
@@ -33,4 +37,220 @@ QA8 DB '   a) ADD    b) ADD & ADC    c) ADC$'
 Q9 DB '9. The instruction, CMP to compare source and destination operands it performs$'
 QA9 DB '   a) subtraction    b) division    c) addition$'
 Q10 DB '10. PUSH operation$'
-QA10 DB '   a) decrements SP    b) increments SP    c) increments SS$'
+QA10 DB '   a) decrements SP    b) increments SP    c) increments SS$'    
+;-----------------------------------------------------------------------------------------------------------
+.CODE
+MAIN PROC 
+    
+    MOV AX,@DATA   
+	MOV DS,AX
+
+	LEA DX,VAR1
+	MOV AH,9 
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,VAR2
+	MOV AH,9
+	INT 21H
+    
+	CALL NL
+    
+	LEA DX,VAR3
+	MOV AH,9
+	INT 21H
+    
+    CALL NL
+    
+	LEA DX,VAR4
+	MOV AH,9
+	INT 21H
+	
+	START:
+	MOV BL, 0  
+    CALL NL
+    
+	LEA DX,VAR5
+	MOV AH,9
+	INT 21H
+	
+	
+	MOV AH, 1 ;--------------read char from input------------
+	INT 21H
+	
+	CMP AL, 0DH ;----------ascii enter
+	JE QSN1
+	JNE START
+;-------------------------------------------------------------------------------------	
+	QSN1:
+	CALL NL
+    
+	LEA DX,Q1
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA1
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	MOV AH, 1
+	INT 21H
+	CMP AL, 'a'
+	JE QSN2
+ ;JNE QSNW2   
+    
+    
+    QSN2:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	MOV BL,0
+	INC BL  ;-----------------------1st inc
+	CALL NL
+    
+	CALL QN2 
+	
+	CALL INPUT
+	
+	CMP AL, 'b'
+	;JE QSN3
+	;JNE QSNW3                             
+    
+;--------------------------display Q---------------------------------
+    QN2:
+    LEA DX,Q2
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA2
+	MOV AH,9
+	INT 21H
+	RET 
+	
+	QN3:
+    LEA DX,Q3
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA3
+	MOV AH,9
+	INT 21H
+	RET
+	
+	QN4:
+    LEA DX,Q4
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA4
+	MOV AH,9
+	INT 21H
+	RET
+	
+	QN5:
+    LEA DX,Q5
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA5
+	MOV AH,9
+	INT 21H
+	RET 
+	
+	QN6:
+    LEA DX,Q6
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA6
+	MOV AH,9
+	INT 21H
+	RET
+	
+	QN7:
+    LEA DX,Q7
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA7
+	MOV AH,9
+	INT 21H
+	RET 
+	
+	QN8:
+    LEA DX,Q8
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA8
+	MOV AH,9
+	INT 21H
+	RET  
+	
+	QN9:
+    LEA DX,Q9
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA9
+	MOV AH,9
+	INT 21H
+	RET 
+	
+	QN10:
+    LEA DX,Q10
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,QA10
+	MOV AH,9
+	INT 21H
+	RET
+;--------------------------------------------------------------------------
+
+	INPUT:
+	CALL NL
+    
+	MOV AH, 1 
+	INT 21H
+	RET
+
+
+	NL: 
+	MOV AH,2     
+	MOV DL, 0AH ;-------new line
+	INT 21H   
+    MOV DL, 0DH 
+    INT 21H
+    RET 
+
+
+
+ MAIN ENDP
+END MAIN
+
