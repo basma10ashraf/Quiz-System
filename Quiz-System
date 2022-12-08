@@ -1,12 +1,12 @@
-  .MODEL SMALL
+ .MODEL SMALL
 .STACK 100H
 
 .DATA    
 
 VAR1 DB '                ...*** WELCOME TO YOUR QUIZ ****...$'
 VAR2 DB 'Rules : $'
-VAR3 DB '*. For Every Correct answer you will get 1 point.$'
-VAR4 DB '*. For Every Wrong answer 1 Point will cut from your total point.$'
+VAR3 DB 'For Every Correct answer you will get 1 point.$'
+VAR4 DB 'For Every Wrong answer 1 Point will cut from your total point.$'
 VAR5 DB 'Press Enter to start the quiz : $'
 
 
