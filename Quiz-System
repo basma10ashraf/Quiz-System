@@ -102,7 +102,7 @@ MAIN PROC
 	INT 21H
 	CMP AL, 'a'
 	JE QSN2
- ;JNE QSNW2   
+ 	JNE QSNW2   
     
     
     QSN2:
@@ -120,8 +120,8 @@ MAIN PROC
 	CALL INPUT
 	
 	CMP AL, 'b'
-	;JE QSN3
-	;JNE QSNW3                             
+	JE QSN3
+	JNE QSNW3                             
  
 	QSNW2:
 	CALL NL
