@@ -226,8 +226,8 @@ MAIN PROC
 	CALL INPUT
 	
 	CMP AL, 'a'
-	JE QSN6
-	JNE QSNW6
+	;JE QSN6
+	;JNE QSNW6
 	
 	QSNW5:
 	CALL NL
@@ -242,8 +242,8 @@ MAIN PROC
 	CALL INPUT
 	
 	CMP AL, 'a'
-	JE QSN6 
-	JNE QSNW6
+	;JE QSN6 
+	;JNE QSNW6
 	   
 ;--------------------------display Q---------------------------------
     QN2:
