@@ -122,7 +122,129 @@ MAIN PROC
 	CMP AL, 'b'
 	;JE QSN3
 	;JNE QSNW3                             
+ 
+	QSNW2:
+	CALL NL
     
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H  
+	
+	 
+ 
+	CALL NL
+    
+	CALL QN2 
+	CALL INPUT
+	
+	CMP AL, 'b'
+	JE QSN3 
+	JNE QSNW3
+	
+	
+	QSN3:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL   ;--------------------------2nd increament
+	CALL NL    
+
+    
+	CALL QN3 
+	CALL INPUT
+	
+	CMP AL, 'c'
+	JE QSN4
+	JNE QSNW4
+	
+	QSNW3:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+      
+	 
+	CALL NL
+    
+	CALL QN3
+	CALL INPUT
+	
+	CMP AL, 'c'
+	JE QSN4 
+	JNE QSNW4
+	
+	QSN4:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+    
+	CALL QN4 
+	CALL INPUT
+	
+	CMP AL, 'b'
+	JE QSN5
+	JNE QSNW5
+	
+	QSNW4:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+	  
+	 
+	CALL NL
+    
+	CALL QN4 
+	CALL INPUT
+	
+	CMP AL, 'b'
+	JE QSN5 
+	JNE QSNW5
+	
+	QSN5:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+    
+	CALL QN5 
+	
+	CALL INPUT
+	
+	CMP AL, 'a'
+	JE QSN6
+	JNE QSNW6
+	
+	QSNW5:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+   
+	CALL NL
+    
+	CALL QN5 
+	CALL INPUT
+	
+	CMP AL, 'a'
+	JE QSN6 
+	JNE QSNW6
+	   
 ;--------------------------display Q---------------------------------
     QN2:
     LEA DX,Q2
