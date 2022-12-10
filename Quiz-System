@@ -102,8 +102,7 @@ MAIN PROC
 	INT 21H
 	CMP AL, 'a'
 	JE QSN2
- 	JNE QSNW2   
-    
+ 	JNE QSNW2      
     
     QSN2:
 	CALL NL
@@ -226,8 +225,8 @@ MAIN PROC
 	CALL INPUT
 	
 	CMP AL, 'a'
-	;JE QSN6
-	;JNE QSNW6
+	JE QSN6
+	JNE QSNW6
 	
 	QSNW5:
 	CALL NL
@@ -242,8 +241,173 @@ MAIN PROC
 	CALL INPUT
 	
 	CMP AL, 'a'
-	;JE QSN6 
-	;JNE QSNW6
+	JE QSN6 
+	JNE QSNW6
+	 QSN6:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+    
+	CALL QN6 
+	
+	CALL INPUT
+	
+	CMP AL, 'c'
+	JE QSN7
+	JNE QSNW7
+	
+	QSNW6:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+   
+	CALL NL
+    
+	CALL QN6 
+	CALL INPUT
+	
+	CMP AL, 'c'
+	JE QSN7 
+	JNE QSNW7
+	
+	QSN7:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+    
+	CALL QN7
+	CALL INPUT
+	
+	CMP AL, 'b'
+	JE QSN8
+	JNE QSNW8
+	
+	QSNW7:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+ 
+	CALL NL
+    
+	CALL QN7 
+	CALL INPUT
+	
+	CMP AL, 'b'
+	JE QSN8 
+	JNE QSNW8
+	
+	QSN8:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+    
+	CALL QN8 
+	CALL INPUT
+	
+	CMP AL, 'c'
+	JE QSN9
+	JNE QSNW9
+	
+	QSNW8:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+ 
+	CALL NL
+    
+	CALL QN8 
+	CALL INPUT
+	
+	CMP AL, 'c'
+	JE QSN9 
+	JNE QSNW9
+	
+	QSN9:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+    
+	CALL QN9 
+	CALL INPUT
+	
+	CMP AL, 'a'
+	JE QSN10
+	JNE QSNW10
+	
+	QSNW9:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+	 
+	CALL NL
+    
+	CALL QN9 
+	CALL INPUT
+	
+	CMP AL, 'a'
+	JE QSN10 
+	JNE QSNW10
+	
+	QSN10:
+	CALL NL
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+    
+	CALL QN10 
+	CALL INPUT
+	
+	CMP AL, 'a'
+	JE EXIT
+	JNE EXITW
+	
+	QSNW10:
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+	         
+	CALL NL
+    
+	CALL QN10 
+	CALL INPUT
+	
+	CMP AL, 'a'
+	JE EXIT 
+	JNE EXITW
 	   
 ;--------------------------display Q---------------------------------
     QN2:
@@ -362,7 +526,6 @@ MAIN PROC
 	INT 21H
 	RET
 
-
 	NL: 
 	MOV AH,2     
 	MOV DL, 0AH ;-------new line
@@ -370,8 +533,6 @@ MAIN PROC
     MOV DL, 0DH 
     INT 21H
     RET 
-
-
 
  MAIN ENDP
 END MAIN
