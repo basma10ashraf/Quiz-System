@@ -408,10 +408,90 @@ MAIN PROC
 	CMP AL, 'a'
 	JE EXIT 
 	JNE EXITW
-	   
+	   EXIT:
+
+	CALL NL 
+    
+	LEA DX,VAR6
+	MOV AH,9
+	INT 21H
+	
+	INC BL
+	CALL NL
+	CALL NL
+    
+	LEA DX,VAR8
+	MOV AH,9
+	INT 21H
+	
+	CALL NL
+    
+	LEA DX,VAR9
+	MOV AH,9
+	INT 21H
+;-------------------------------------------	
+
+	ADD BL, 48 ;add 0
+	
+	CMP BL,57  ; bl-9
+	JG TEN
+	MOV AH, 2
+	MOV DL, BL
+	INT 21H
+	JMP EXIT1
+
+;-------------------------------------------------------------------	
+	EXITW:
+
+	CALL NL
+    
+	LEA DX,VAR7
+	MOV AH,9
+	INT 21H
+	
+	;DEC BL
+	CALL NL
+	CALL NL  
+
+    
+	LEA DX,VAR8
+	MOV AH,9
+	INT 21H 
+	
+	CALL NL
+        CALL NL
+    
+	LEA DX,VAR9
+	MOV AH,9
+	INT 21H
+	
+	ADD BL,48 ;add 0
+	MOV AH,2   
+	
+	MOV DL, BL
+	INT 21H
+	
+	JMP EXIT1
+;--------------------------display 10--------------------------------	
+	TEN:
+	MOV AH,2 ; display on output
+	MOV DL,"1"
+	INT 21H  
+	MOV DL,"0"
+	INT 21H
+	JMP EXIT1
+
+
+        NL: 
+	MOV AH,2     
+	MOV DL, 0AH ;-------new line
+	INT 21H   
+        MOV DL, 0DH 
+        INT 21H
+        RET 
 ;--------------------------display Q---------------------------------
-    QN2:
-    LEA DX,Q2
+        QN2:
+        LEA DX,Q2
 	MOV AH,9
 	INT 21H
 	
@@ -423,7 +503,7 @@ MAIN PROC
 	RET 
 	
 	QN3:
-    LEA DX,Q3
+        LEA DX,Q3
 	MOV AH,9
 	INT 21H
 	
@@ -435,7 +515,7 @@ MAIN PROC
 	RET
 	
 	QN4:
-    LEA DX,Q4
+        LEA DX,Q4
 	MOV AH,9
 	INT 21H
 	
@@ -525,14 +605,31 @@ MAIN PROC
 	MOV AH, 1 
 	INT 21H
 	RET
+        EXIT1: 
 
-	NL: 
-	MOV AH,2     
-	MOV DL, 0AH ;-------new line
-	INT 21H   
-    MOV DL, 0DH 
-    INT 21H
-    RET 
+	CALL NL 
+	CALL NL
+	
+	LEA DX,VAR10
+	MOV AH,9
+	INT 21H
+	
+	MOV AH,1
+	INT 21H
+	
+	CMP AL,'1'
+	JE START 
+	
+	CALL NL
+	CALL NL
+	
+	LEA DX,VAR11
+	MOV AH,9
+	INT 21H
+	
+	MOV AH, 4CH
+	INT 21H     
+	
 
  MAIN ENDP
 END MAIN
