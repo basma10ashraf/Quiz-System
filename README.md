@@ -1,8 +1,8 @@
-PROJECT TITLE:
-Quiz system
+###PROJECT TITLE:
+#Quiz system
 
-PROJECT DESCRIPTION:
-Quiz system is an exam form of MCQs in which,we have set 10 questions.
+###PROJECT DESCRIPTION:
+#Quiz system is an exam form of MCQs in which,we have set 10 questions.
  For each right answer 1 mark will be increased and for each 
 wrong answer nothing will be added to the total points 
 and at the end of the quiz total marks will be shown.
