@@ -1,5 +1,5 @@
 # PROJECT TITLE:
-Quiz system
+$\color[rgb]{1,0,1} Quiz system$
 
 ## PROJECT DESCRIPTION:
 Quiz system is an exam form of MCQs in which,we have set 10 questions.
