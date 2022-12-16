@@ -24,8 +24,8 @@ add the needed questions.
 # ASSEMBLY CODE:
 ![IM](https://user-images.githubusercontent.com/66069469/208192747-ca146169-32a9-49f0-8a36-5416b2297a38.png)
 
-#For printing our desired strings, we have built up 10 variables from VAR1 to VAR11, and we have also utilised Q1 to Q10 and QA1 to QA10 for printing our desired questions and their answers.
+For printing our desired strings, we have built up 10 variables from VAR1 to VAR11, and we have also utilised Q1 to Q10 and QA1 to QA10 for printing our desired questions and their answers.
 
 ![image_2022-12-16_20-17-59](https://user-images.githubusercontent.com/66069469/208192944-0a9204f4-b96f-4731-8321-889466fd1274.png)
 
-#We have now reached the first level. We started by printing a new line, and after that, we used an input to compare the carriage return. It will move to the QSN1 level if it is equal.
+We have now reached the first level. We started by printing a new line, and after that, we used an input to compare the carriage return. It will move to the QSN1 level if it is equal.
