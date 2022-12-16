@@ -20,8 +20,8 @@ Every serious programmer should make the time and effort to learn assembly langu
 In order for the system to be used for academic purposes and to quickly and simply
 measure student progress, we expect that in the future the user will be able to manually
 add the needed questions.
-![alt](https://github.com/basma10ashraf/Quiz-System/blob/main/IMG_20221216_223515_753.jpg)
 
+![IMG_20221216_223515_753](IMG_20221216_223515_753.jpg)
 # ASSEMBLY CODE:
 ![IM](https://user-images.githubusercontent.com/66069469/208192747-ca146169-32a9-49f0-8a36-5416b2297a38.png)
 
