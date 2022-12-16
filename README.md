@@ -35,4 +35,7 @@ We have now reached the first level. We started by printing a new line, and afte
 
 We shall now address the query. We'll pick 1 level and 1 input, and we'll compare it to the right response. The QSN2 level will be reached if it is equal; else, the QSNW2 level will be reached.
 
+![image_2022-12-16_20-30-20(1)](https://user-images.githubusercontent.com/119314929/208196213-92a29f59-5a51-4c32-8774-5d8910b53bd4.png)
+
+
 In QSN2, level BL will be increased for correct answers, after which the same input process will be used.
