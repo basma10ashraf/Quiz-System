@@ -1,7 +1,7 @@
-#PROJECT TITLE:
+# PROJECT TITLE:
 Quiz system
 
-##PROJECT DESCRIPTION:
+## PROJECT DESCRIPTION:
 Quiz system is an exam form of MCQs in which,we have set 10 questions.
  For each right answer 1 mark will be increased and for each 
 wrong answer nothing will be added to the total points 
@@ -20,5 +20,5 @@ Every serious programmer should make the time and effort to learn assembly langu
 In order for the system to be used for academic purposes and to quickly and simply
 measure student progress, we expect that in the future the user will be able to manually
 add the needed questions.
-https://github.com/basma10ashraf/Quiz-System/blob/main/IMG_20221216_223515_753.jpg
+![alt](https://github.com/basma10ashraf/Quiz-System/blob/main/IMG_20221216_223515_753.jpg)
 
