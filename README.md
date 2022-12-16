@@ -30,7 +30,7 @@ For printing our desired strings, we have built up 10 variables from VAR1 to VAR
 
 We have now reached the first level. We started by printing a new line, and after that, we used an input to compare the carriage return. It will move to the QSN1 level if it is equal.
 
-We shall now address the query. We'll pick 1 level and 1 input, and we'll compare it to the right response. The QSN2 level will be reached if it is equal; else, the QSNW2 level will be reached.
 
 ![image_2022-12-16_20-25-05](https://user-images.githubusercontent.com/119314929/208194098-bb994d3e-dabd-4560-bcb8-6ecc4219ee0a.png)
 
+We shall now address the query. We'll pick 1 level and 1 input, and we'll compare it to the right response. The QSN2 level will be reached if it is equal; else, the QSNW2 level will be reached.
