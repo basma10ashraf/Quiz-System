@@ -1,5 +1,5 @@
 # Title:
-$\color[rgb]{1,0,1} Quiz system$
+ Quiz-system
 
 # Description:
 * Quiz system is an exam form of MCQs in which,we have set 10 questions.
