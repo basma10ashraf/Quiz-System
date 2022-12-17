@@ -48,7 +48,6 @@ add the needed questions.
 
  ![image_2022-12-16_21-25-13](https://user-images.githubusercontent.com/119519190/208255996-8b650005-86eb-4129-bbf9-e7444f266103.png)
 
-
 # Run program videos:
 
 # How to run the program:
