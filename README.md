@@ -52,6 +52,7 @@ add the needed questions.
 # Run program videos:
 
 # How to run the program:
+Download and setup EMU8086 
 
 # This Project was under supervision of:
 * Dr. Abd-Elhamid Al-Etaby
