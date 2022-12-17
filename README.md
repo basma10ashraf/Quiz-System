@@ -54,7 +54,7 @@ add the needed questions.
 Download and setup EMU8086 
 
 # This Project was under supervision of:
-* Dr. Abd-Elhamid Al-Etaby
+ Dr. Abd-Elhamid Al-Etaby
 
 # Team members:
 * Ahmed Saber 
