@@ -51,6 +51,8 @@ add the needed questions.
 
 # Run program videos:
 
+# How to run the program:
+
 # This Project was under supervision of:
 * Dr. Abd-Elhamid Al-Etaby
 
