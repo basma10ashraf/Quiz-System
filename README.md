@@ -38,3 +38,6 @@ add the needed questions.
 
 
 * In QSN2, level BL will be increased for correct answers, after which the same input process will be used.
+
+![image_2022-12-16_20-36-42](https://user-images.githubusercontent.com/119519190/208255266-d2c33c93-0471-4d74-9e52-dcab61b2841a.png)
+ 
