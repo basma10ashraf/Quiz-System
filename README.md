@@ -46,5 +46,7 @@ add the needed questions.
 
 # Flowchart:
 
+![image_2022-12-16_20-36-42](https://user-images.githubusercontent.com/119519190/208255967-8e67dff3-0fd4-492d-8a8b-487223fa6e82.png)
+
 
 
