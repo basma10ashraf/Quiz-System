@@ -17,7 +17,8 @@ potent programming language for computers, and it provides programmers
 with the understanding they need to create efficient code in high-level languages.
 Every serious programmer should make the time and effort to learn assembly language.
 
-![Screenshot (632)](https://user-images.githubusercontent.com/66069469/208203386-e736ee6b-f66f-4d94-9c28-57b84b3c3027.png)
+![Screenshot (666)](https://user-images.githubusercontent.com/66069469/208444429-5c1c52eb-3127-4ddf-a985-08ac6009871e.png)
+
 * In order for the system to be used for academic purposes and to quickly and simply
 measure student progress, we expect that in the future the user will be able to manually
 add the needed questions.
