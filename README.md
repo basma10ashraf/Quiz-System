@@ -69,16 +69,12 @@ QA10 DB '   a) decrements SP    b) increments SP    c) increments SS$'
 ```ruby
 START:
 	MOV BL, 0  
-    CALL NL
-    
+        CALL NL
 	LEA DX,VAR5
 	MOV AH,9
 	INT 21H
-	
-	
 	MOV AH, 1 ;--------------read char from input------------
 	INT 21H
-	
 	CMP AL, 0DH ;----------ascii enter
 	JE QSN1
 	JNE START
@@ -87,19 +83,14 @@ START:
 ```ruby
 QSN1:
 	CALL NL
-    
 	LEA DX,Q1
 	MOV AH,9
 	INT 21H
-	
 	CALL NL
-    
 	LEA DX,QA1
 	MOV AH,9
 	INT 21H
-	
 	CALL NL
-    
 	MOV AH, 1
 	INT 21H
 	CMP AL, 'a'
@@ -110,20 +101,16 @@ QSN1:
 ```ruby
  QSN2:
 	CALL NL
-    
 	LEA DX,VAR6
 	MOV AH,9
 	INT 21H
 	MOV BL,0
 	INC BL  ;-----------------------1st inc
 	CALL NL
-    
 	CALL QN2 
-	
 	CALL INPUT
-	
 	CMP AL, 'b'
-	JE QSN3
+	JE QSN3  
 	JNE QSNW3                             
  
 ```
@@ -133,22 +120,16 @@ QSN1:
 EXITW:
 
 	CALL NL
-    
 	LEA DX,VAR7
 	MOV AH,9
 	INT 21H
-	
-	;DEC BL
 	CALL NL
 	CALL NL  
-
-    
 	LEA DX,VAR8
 	MOV AH,9
 	INT 21H 
-	
 	CALL NL
- CALL NL
+ 	CALL NL
     
 	LEA DX,VAR9
 	MOV AH,9
