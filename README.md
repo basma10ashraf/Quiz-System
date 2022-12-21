@@ -150,7 +150,7 @@ EXITW:
  ![image_2022-12-16_21-25-13](https://user-images.githubusercontent.com/119519190/208255996-8b650005-86eb-4129-bbf9-e7444f266103.png)
 
 # Run program videos:
-![Watch It!](https://youtube.com/playlist?list=PLcVUdVfrVb_3MN53QR9mbARpFbfEjJjta)
+[Watch It!](https://youtube.com/playlist?list=PLcVUdVfrVb_3MN53QR9mbARpFbfEjJjta)
 # How to run the program:
 Download and setup EMU8086 
 
