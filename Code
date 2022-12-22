@@ -107,7 +107,7 @@ MAIN PROC
     QSN2:
 	CALL NL
     
-	LEA DX,VAR6
+	LEA DX,VAR6   ;right answer
 	MOV AH,9
 	INT 21H
 	MOV BL,0
@@ -433,7 +433,7 @@ MAIN PROC
 
 	ADD BL, 48 ;add 0
 	
-	CMP BL,57  ; bl-9
+	CMP BL,57  ; bl-9 
 	JG TEN
 	MOV AH, 2
 	MOV DL, BL
@@ -481,12 +481,12 @@ MAIN PROC
 	INT 21H
 	JMP EXIT1
 
-
+;-------------------------------------------------------------
         NL: 
 	MOV AH,2     
 	MOV DL, 0AH ;-------new line
 	INT 21H   
-        MOV DL, 0DH 
+        MOV DL, 0DH ;control character to reset a device's position to the beginning of a line of text 
         INT 21H
         RET 
 ;--------------------------display Q---------------------------------
@@ -605,6 +605,7 @@ MAIN PROC
 	MOV AH, 1 
 	INT 21H
 	RET
+;----------------------------------------------------------------------------
         EXIT1: 
 
 	CALL NL 
