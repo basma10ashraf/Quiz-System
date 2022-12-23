@@ -27,7 +27,7 @@ QA3 DB '   a) Direction flag    b) Overflow flag    c) Index flag$'
 Q4 DB '4. Which of the following is not a condition flag?$'
 QA4 DB '   a) Auxiliary carry flag    b) Trap flag    c) Zero flag$'
 Q5 DB '5. Operation code field is present in....$'
-QA5 DB '   a) machine language instruction    b) assembly language instruction    c) none of the mentioned$'
+QA5 DB '   a) machine language instruction   b) assembly language instruction   c) none of the mentioned$'
 Q6 DB '6. If a W-bit value is ‘1’ then the operand is of....$'
 QA6 DB '   a) 2 bits    b) 4 bits    c) 16 bits$'
 Q7 DB '7. Which of the following instruction is not valid?$'
@@ -42,594 +42,456 @@ QA10 DB '   a) decrements SP    b) increments SP    c) increments SS$'
 .CODE
 MAIN PROC 
     
-    MOV AX,@DATA   
+        MOV AX,@DATA   
 	MOV DS,AX
-
 	LEA DX,VAR1
 	MOV AH,9 
 	INT 21H
-	
 	CALL NL
-    
 	LEA DX,VAR2
 	MOV AH,9
 	INT 21H
-    
 	CALL NL
-    
 	LEA DX,VAR3
 	MOV AH,9
 	INT 21H
-    
-    CALL NL
-    
+        CALL NL
 	LEA DX,VAR4
 	MOV AH,9
 	INT 21H
 	
 	START:
-	MOV BL, 0  
-    CALL NL
-    
-	LEA DX,VAR5
-	MOV AH,9
-	INT 21H
-	
-	
-	MOV AH, 1 ;--------------read char from input------------
-	INT 21H
-	
-	CMP AL, 0DH ;----------ascii enter
-	JE QSN1
-	JNE START
+		MOV BL, 0  
+		CALL NL
+		LEA DX,VAR5
+		MOV AH,9
+		INT 21H
+		MOV AH, 1     ;--------------read char from input------------
+		INT 21H
+		CMP AL, 0DH    ;-----ascii enter
+		JE QSN1
+		JNE START
 ;-------------------------------------------------------------------------------------	
 	QSN1:
-	CALL NL
+		CALL NL
+		LEA DX,Q1
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA1
+		MOV AH,9
+		INT 21H
+		CALL NL
+		MOV AH, 1
+		INT 21H
+		CMP AL, 'a'
+		JE QSN2
+		JNE QSNW2      
     
-	LEA DX,Q1
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA1
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	MOV AH, 1
-	INT 21H
-	CMP AL, 'a'
-	JE QSN2
- 	JNE QSNW2      
-    
-    QSN2:
-	CALL NL
-    
-	LEA DX,VAR6   ;right answer
-	MOV AH,9
-	INT 21H
-	MOV BL,0
-	INC BL  ;-----------------------1st inc
-	CALL NL
-    
-	CALL QN2 
-	
-	CALL INPUT
-	
-	CMP AL, 'b'
-	JE QSN3
-	JNE QSNW3                             
+      QSN2:
+		CALL NL
+		LEA DX,VAR6   ;right answer
+		MOV AH,9
+		INT 21H
+		MOV BL,0
+		INC BL  ;-----------------------1st inc
+		CALL NL
+		CALL QN2 
+		CALL INPUT
+		CMP AL, 'b'
+		JE QSN3
+		JNE QSNW3                             
  
 	QSNW2:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H  
-	
-	 
- 
-	CALL NL
-    
-	CALL QN2 
-	CALL INPUT
-	
-	CMP AL, 'b'
-	JE QSN3 
-	JNE QSNW3
-	
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H  
+		CALL NL
+		CALL QN2 
+		CALL INPUT
+		CMP AL, 'b'
+		JE QSN3 
+		JNE QSNW3
 	
 	QSN3:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL   ;--------------------------2nd increament
-	CALL NL    
-
-    
-	CALL QN3 
-	CALL INPUT
-	
-	CMP AL, 'c'
-	JE QSN4
-	JNE QSNW4
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL     ;-----------2nd increament
+		CALL NL    
+		CALL QN3 
+		CALL INPUT
+		CMP AL, 'c'
+		JE QSN4
+		JNE QSNW4
 	
 	QSNW3:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
-      
-	 
-	CALL NL
-    
-	CALL QN3
-	CALL INPUT
-	
-	CMP AL, 'c'
-	JE QSN4 
-	JNE QSNW4
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN3
+		CALL INPUT
+		CMP AL, 'c'
+		JE QSN4 
+		JNE QSNW4
 	
 	QSN4:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-    
-	CALL QN4 
-	CALL INPUT
-	
-	CMP AL, 'b'
-	JE QSN5
-	JNE QSNW5
-	
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL QN4 
+		CALL INPUT
+		CMP AL, 'b'
+		JE QSN5
+		JNE QSNW5
+
 	QSNW4:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
-	  
-	 
-	CALL NL
-    
-	CALL QN4 
-	CALL INPUT
-	
-	CMP AL, 'b'
-	JE QSN5 
-	JNE QSNW5
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN4 
+		CALL INPUT
+		CMP AL, 'b'
+		JE QSN5 
+		JNE QSNW5
 	
 	QSN5:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-    
-	CALL QN5 
-	
-	CALL INPUT
-	
-	CMP AL, 'a'
-	JE QSN6
-	JNE QSNW6
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL QN5 
+		CALL INPUT
+		CMP AL, 'a'
+		JE QSN6
+		JNE QSNW6
 	
 	QSNW5:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
-   
-	CALL NL
-    
-	CALL QN5 
-	CALL INPUT
-	
-	CMP AL, 'a'
-	JE QSN6 
-	JNE QSNW6
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN5 
+		CALL INPUT
+		CMP AL, 'a'
+		JE QSN6 
+		JNE QSNW6
 	 QSN6:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-    
-	CALL QN6 
-	
-	CALL INPUT
-	
-	CMP AL, 'c'
-	JE QSN7
-	JNE QSNW7
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL QN6 
+		CALL INPUT
+		CMP AL, 'c'
+		JE QSN7
+		JNE QSNW7
 	
 	QSNW6:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
-   
-	CALL NL
-    
-	CALL QN6 
-	CALL INPUT
-	
-	CMP AL, 'c'
-	JE QSN7 
-	JNE QSNW7
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN6 
+		CALL INPUT
+		CMP AL, 'c'
+		JE QSN7 
+		JNE QSNW7
 	
 	QSN7:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-    
-	CALL QN7
-	CALL INPUT
-	
-	CMP AL, 'b'
-	JE QSN8
-	JNE QSNW8
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL QN7
+		CALL INPUT
+		CMP AL, 'b'
+		JE QSN8
+		JNE QSNW8
 	
 	QSNW7:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
- 
-	CALL NL
-    
-	CALL QN7 
-	CALL INPUT
-	
-	CMP AL, 'b'
-	JE QSN8 
-	JNE QSNW8
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN7 
+		CALL INPUT
+		CMP AL, 'b'
+		JE QSN8 
+		JNE QSNW8
 	
 	QSN8:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-    
-	CALL QN8 
-	CALL INPUT
-	
-	CMP AL, 'c'
-	JE QSN9
-	JNE QSNW9
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL QN8 
+		CALL INPUT
+		CMP AL, 'c'
+		JE QSN9
+		JNE QSNW9
 	
 	QSNW8:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
- 
-	CALL NL
-    
-	CALL QN8 
-	CALL INPUT
-	
-	CMP AL, 'c'
-	JE QSN9 
-	JNE QSNW9
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN8 
+		CALL INPUT
+		CMP AL, 'c'
+		JE QSN9 
+		JNE QSNW9
 	
 	QSN9:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-    
-	CALL QN9 
-	CALL INPUT
-	
-	CMP AL, 'a'
-	JE QSN10
-	JNE QSNW10
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL QN9 
+		CALL INPUT
+		CMP AL, 'a'
+		JE QSN10
+		JNE QSNW10
 	
 	QSNW9:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
-	 
-	CALL NL
-    
-	CALL QN9 
-	CALL INPUT
-	
-	CMP AL, 'a'
-	JE QSN10 
-	JNE QSNW10
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN9 
+		CALL INPUT
+		CMP AL, 'a'
+		JE QSN10 
+		JNE QSNW10
 	
 	QSN10:
-	CALL NL
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-    
-	CALL QN10 
-	CALL INPUT
-	
-	CMP AL, 'a'
-	JE EXIT
-	JNE EXITW
+		CALL NL
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL QN10 
+		CALL INPUT
+		CMP AL, 'a'
+		JE EXIT
+		JNE EXITW
 	
 	QSNW10:
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
-	         
-	CALL NL
-    
-	CALL QN10 
-	CALL INPUT
-	
-	CMP AL, 'a'
-	JE EXIT 
-	JNE EXITW
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL QN10 
+		CALL INPUT
+		CMP AL, 'a'
+		JE EXIT 
+		JNE EXITW
 	   EXIT:
 
-	CALL NL 
-    
-	LEA DX,VAR6
-	MOV AH,9
-	INT 21H
-	
-	INC BL
-	CALL NL
-	CALL NL
-    
-	LEA DX,VAR8
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,VAR9
-	MOV AH,9
-	INT 21H
-;-------------------------------------------	
-
-	ADD BL, 48 ;add 0
-	
-	CMP BL,57  ; bl-9 
-	JG TEN
-	MOV AH, 2
-	MOV DL, BL
-	INT 21H
-	JMP EXIT1
+		CALL NL 
+		LEA DX,VAR6
+		MOV AH,9
+		INT 21H
+		INC BL
+		CALL NL
+		CALL NL
+		LEA DX,VAR8
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,VAR9
+		MOV AH,9
+		INT 21H
+		
+		ADD BL, 48 ;add 0
+		CMP BL,57  ; bl-9 
+		JG TEN
+		MOV AH, 2
+		MOV DL, BL
+		INT 21H
+		JMP EXIT1
 
 ;-------------------------------------------------------------------	
 	EXITW:
-
-	CALL NL
-    
-	LEA DX,VAR7
-	MOV AH,9
-	INT 21H
-	
-	;DEC BL
-	CALL NL
-	CALL NL  
-
-    
-	LEA DX,VAR8
-	MOV AH,9
-	INT 21H 
-	
-	CALL NL
-        CALL NL
-    
-	LEA DX,VAR9
-	MOV AH,9
-	INT 21H
-	
-	ADD BL,48 ;add 0
-	MOV AH,2   
-	
-	MOV DL, BL
-	INT 21H
-	
-	JMP EXIT1
+		CALL NL
+		LEA DX,VAR7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		CALL NL  
+		LEA DX,VAR8
+		MOV AH,9
+		INT 21H 
+		CALL NL
+		CALL NL
+		LEA DX,VAR9
+		MOV AH,9
+		INT 21H
+		
+		ADD BL,48 ;add 0
+		MOV AH,2   
+		MOV DL, BL
+		INT 21H
+		JMP EXIT1
 ;--------------------------display 10--------------------------------	
 	TEN:
-	MOV AH,2 ; display on output
-	MOV DL,"1"
-	INT 21H  
-	MOV DL,"0"
-	INT 21H
-	JMP EXIT1
+		MOV AH,2 ; display on output 
+		MOV DL,"1"
+		INT 21H  
+		MOV DL,"0"
+		INT 21H
+		JMP EXIT1
 
 ;-------------------------------------------------------------
         NL: 
-	MOV AH,2     
-	MOV DL, 0AH ;-------new line
-	INT 21H   
-        MOV DL, 0DH ;control character to reset a device's position to the beginning of a line of text 
-        INT 21H
-        RET 
+		MOV AH,2     
+		MOV DL, 0AH    ;-------ascii new line
+		INT 21H   
+		MOV DL, 0DH     ;control character to reset a device's position to the beginning of a line of text 
+		INT 21H
+		RET 
 ;--------------------------display Q---------------------------------
         QN2:
-        LEA DX,Q2
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA2
-	MOV AH,9
-	INT 21H
-	RET 
+		LEA DX,Q2
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA2
+		MOV AH,9
+		INT 21H
+		RET 
 	
 	QN3:
-        LEA DX,Q3
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA3
-	MOV AH,9
-	INT 21H
-	RET
+		LEA DX,Q3
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA3
+		MOV AH,9
+		INT 21H
+		RET
 	
 	QN4:
-        LEA DX,Q4
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA4
-	MOV AH,9
-	INT 21H
-	RET
+		LEA DX,Q4
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA4
+		MOV AH,9
+		INT 21H
+		RET
 	
 	QN5:
-    LEA DX,Q5
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA5
-	MOV AH,9
-	INT 21H
-	RET 
+	        LEA DX,Q5
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA5
+		MOV AH,9
+		INT 21H
+		RET 
 	
 	QN6:
-    LEA DX,Q6
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA6
-	MOV AH,9
-	INT 21H
-	RET
+	        LEA DX,Q6
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA6
+		MOV AH,9
+		INT 21H
+		RET
 	
 	QN7:
-    LEA DX,Q7
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA7
-	MOV AH,9
-	INT 21H
-	RET 
+	        LEA DX,Q7
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA7
+		MOV AH,9
+		INT 21H
+		RET 
 	
 	QN8:
-    LEA DX,Q8
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA8
-	MOV AH,9
-	INT 21H
-	RET  
+	        LEA DX,Q8
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA8
+		MOV AH,9
+		INT 21H
+		RET  
 	
 	QN9:
-    LEA DX,Q9
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA9
-	MOV AH,9
-	INT 21H
-	RET 
+	        LEA DX,Q9
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA9
+		MOV AH,9
+		INT 21H
+		RET 
 	
 	QN10:
-    LEA DX,Q10
-	MOV AH,9
-	INT 21H
-	
-	CALL NL
-    
-	LEA DX,QA10
-	MOV AH,9
-	INT 21H
-	RET
+	        LEA DX,Q10
+		MOV AH,9
+		INT 21H
+		CALL NL
+		LEA DX,QA10
+		MOV AH,9
+		INT 21H
+		RET
 ;--------------------------------------------------------------------------
 
 	INPUT:
-	CALL NL
-    
-	MOV AH, 1 
-	INT 21H
-	RET
+		CALL NL
+		MOV AH, 1 
+		INT 21H
+		RET
 ;----------------------------------------------------------------------------
         EXIT1: 
 
-	CALL NL 
-	CALL NL
-	
-	LEA DX,VAR10
-	MOV AH,9
-	INT 21H
-	
-	MOV AH,1
-	INT 21H
-	
-	CMP AL,'1'
-	JE START 
-	
-	CALL NL
-	CALL NL
-	
-	LEA DX,VAR11
-	MOV AH,9
-	INT 21H
-	
-	MOV AH, 4CH
-	INT 21H     
+		CALL NL 
+		CALL NL
+		LEA DX,VAR10
+		MOV AH,9
+		INT 21H
+		MOV AH,1
+		INT 21H
+		CMP AL,'1'
+		JE START 
+		CALL NL
+		CALL NL
+		LEA DX,VAR11
+		MOV AH,9
+		INT 21H
+		MOV AH, 4CH
+		INT 21H     
 	
 
  MAIN ENDP
