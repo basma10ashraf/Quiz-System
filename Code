@@ -44,18 +44,22 @@ MAIN PROC
     
         MOV AX,@DATA   
 	MOV DS,AX
+	
 	LEA DX,VAR1
 	MOV AH,9 
 	INT 21H
 	CALL NL
+	
 	LEA DX,VAR2
 	MOV AH,9
 	INT 21H
 	CALL NL
+	
 	LEA DX,VAR3
 	MOV AH,9
 	INT 21H
         CALL NL
+	
 	LEA DX,VAR4
 	MOV AH,9
 	INT 21H
@@ -63,11 +67,13 @@ MAIN PROC
 	START:
 		MOV BL, 0  
 		CALL NL
-		LEA DX,VAR5
+		LEA DX,VAR5   ;enter to start the quiz
 		MOV AH,9
 		INT 21H
+		
 		MOV AH, 1     ;--------------read char from input------------
 		INT 21H
+		
 		CMP AL, 0DH    ;-----ascii enter
 		JE QSN1
 		JNE START
@@ -78,10 +84,12 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA1
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		MOV AH, 1
 		INT 21H
 		CMP AL, 'a'
@@ -93,6 +101,7 @@ MAIN PROC
 		LEA DX,VAR6   ;right answer
 		MOV AH,9
 		INT 21H
+		
 		MOV BL,0
 		INC BL  ;-----------------------1st inc
 		CALL NL
@@ -104,11 +113,13 @@ MAIN PROC
  
 	QSNW2:
 		CALL NL
-		LEA DX,VAR7
+		LEA DX,VAR7   ;wrong answer
 		MOV AH,9
-		INT 21H  
+		INT 21H 
+		
 		CALL NL
 		CALL QN2 
+		
 		CALL INPUT
 		CMP AL, 'b'
 		JE QSN3 
@@ -120,8 +131,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL     ;-----------2nd increament
+		
 		CALL NL    
 		CALL QN3 
+		
 		CALL INPUT
 		CMP AL, 'c'
 		JE QSN4
@@ -132,8 +145,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
 		CALL QN3
+		
 		CALL INPUT
 		CMP AL, 'c'
 		JE QSN4 
@@ -145,8 +160,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL
+		
 		CALL NL
 		CALL QN4 
+		
 		CALL INPUT
 		CMP AL, 'b'
 		JE QSN5
@@ -157,8 +174,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
 		CALL QN4 
+		
 		CALL INPUT
 		CMP AL, 'b'
 		JE QSN5 
@@ -170,8 +189,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL
+		
 		CALL NL
 		CALL QN5 
+		
 		CALL INPUT
 		CMP AL, 'a'
 		JE QSN6
@@ -182,8 +203,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
 		CALL QN5 
+		
 		CALL INPUT
 		CMP AL, 'a'
 		JE QSN6 
@@ -194,8 +217,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL
+		
 		CALL NL
 		CALL QN6 
+		
 		CALL INPUT
 		CMP AL, 'c'
 		JE QSN7
@@ -206,8 +231,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
-		CALL QN6 
+		CALL QN6
+		
 		CALL INPUT
 		CMP AL, 'c'
 		JE QSN7 
@@ -219,8 +246,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL
+		
 		CALL NL
 		CALL QN7
+		
 		CALL INPUT
 		CMP AL, 'b'
 		JE QSN8
@@ -231,8 +260,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
 		CALL QN7 
+		
 		CALL INPUT
 		CMP AL, 'b'
 		JE QSN8 
@@ -244,8 +275,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL
+		
 		CALL NL
 		CALL QN8 
+		
 		CALL INPUT
 		CMP AL, 'c'
 		JE QSN9
@@ -256,8 +289,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
 		CALL QN8 
+		
 		CALL INPUT
 		CMP AL, 'c'
 		JE QSN9 
@@ -269,8 +304,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL
+		
 		CALL NL
 		CALL QN9 
+		
 		CALL INPUT
 		CMP AL, 'a'
 		JE QSN10
@@ -281,8 +318,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
 		CALL QN9 
+		
 		CALL INPUT
 		CMP AL, 'a'
 		JE QSN10 
@@ -294,8 +333,10 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		INC BL
+		
 		CALL NL
 		CALL QN10 
+		
 		CALL INPUT
 		CMP AL, 'a'
 		JE EXIT
@@ -306,8 +347,10 @@ MAIN PROC
 		LEA DX,VAR7
 		MOV AH,9
 		INT 21H
+		
 		CALL NL
 		CALL QN10 
+		
 		CALL INPUT
 		CMP AL, 'a'
 		JE EXIT 
@@ -321,10 +364,12 @@ MAIN PROC
 		INC BL
 		CALL NL
 		CALL NL
+		
 		LEA DX,VAR8
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,VAR9
 		MOV AH,9
 		INT 21H
@@ -332,6 +377,7 @@ MAIN PROC
 		ADD BL, 48 ;add 0
 		CMP BL,57  ; bl-9 
 		JG TEN
+		
 		MOV AH, 2
 		MOV DL, BL
 		INT 21H
@@ -344,12 +390,14 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
-		CALL NL  
+		CALL NL 
+		
 		LEA DX,VAR8
 		MOV AH,9
 		INT 21H 
 		CALL NL
 		CALL NL
+		
 		LEA DX,VAR9
 		MOV AH,9
 		INT 21H
@@ -364,6 +412,7 @@ MAIN PROC
 		MOV AH,2 ; display on output 
 		MOV DL,"1"
 		INT 21H  
+		
 		MOV DL,"0"
 		INT 21H
 		JMP EXIT1
@@ -373,6 +422,7 @@ MAIN PROC
 		MOV AH,2     
 		MOV DL, 0AH    ;-------ascii new line
 		INT 21H   
+		
 		MOV DL, 0DH     ;control character to reset a device's position to the beginning of a line of text 
 		INT 21H
 		RET 
@@ -382,6 +432,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA2
 		MOV AH,9
 		INT 21H
@@ -392,6 +443,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA3
 		MOV AH,9
 		INT 21H
@@ -402,6 +454,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA4
 		MOV AH,9
 		INT 21H
@@ -412,6 +465,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA5
 		MOV AH,9
 		INT 21H
@@ -422,6 +476,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA6
 		MOV AH,9
 		INT 21H
@@ -432,6 +487,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA7
 		MOV AH,9
 		INT 21H
@@ -442,6 +498,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA8
 		MOV AH,9
 		INT 21H
@@ -452,6 +509,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA9
 		MOV AH,9
 		INT 21H
@@ -462,6 +520,7 @@ MAIN PROC
 		MOV AH,9
 		INT 21H
 		CALL NL
+		
 		LEA DX,QA10
 		MOV AH,9
 		INT 21H
@@ -481,15 +540,19 @@ MAIN PROC
 		LEA DX,VAR10
 		MOV AH,9
 		INT 21H
+		
 		MOV AH,1
 		INT 21H
 		CMP AL,'1'
 		JE START 
+		
 		CALL NL
 		CALL NL
+		
 		LEA DX,VAR11
 		MOV AH,9
 		INT 21H
+		
 		MOV AH, 4CH
 		INT 21H     
 	
