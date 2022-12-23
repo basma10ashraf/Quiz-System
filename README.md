@@ -165,7 +165,8 @@ EXITW:
 
 # Program Phases:
 
- ![image_2022-12-16_21-25-13](https://user-images.githubusercontent.com/119519190/208255996-8b650005-86eb-4129-bbf9-e7444f266103.png)
+  ![photo1671800200](https://user-images.githubusercontent.com/119314929/209343051-af8f7dc7-5b4e-4213-8d4d-4a23d26a18aa.jpeg)
+
 
 # Run program videos:
 [Watch It!](https://youtube.com/playlist?list=PLo6dFyeKk2ZqIWqZsFqWnfU_d60VCo3yE)
