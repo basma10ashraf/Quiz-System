@@ -143,7 +143,7 @@ EXITW:
 	
 	JMP EXIT1
  ```
-* To convert our inner ascii to decimal in the exit level and make the user's understanding of the marks achieved easier, we added 48 with BL.
+* we added 48 with BL:To convert number into ascii then the inner ascii converted into decimal in the exit level to make the user's understanding of the marks achieved easier.
 
 # Program Phases:
 
