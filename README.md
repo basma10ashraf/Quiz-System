@@ -17,16 +17,24 @@ potent programming language for computers, and it provides programmers
 with the understanding they need to create efficient code in high-level languages.
 Every serious programmer should make the time and effort to learn assembly language.
 
-![Screenshot (677)](https://user-images.githubusercontent.com/66069469/208452435-e4a40702-8b0a-454d-bff8-7bc95fe0285c.png)
-
 * In order for the system to be used for academic purposes and to quickly and simply
 measure student progress, we expect that in the future the user will be able to manually
 add the needed questions.
+
+![Screenshot (677)](https://user-images.githubusercontent.com/66069469/208452435-e4a40702-8b0a-454d-bff8-7bc95fe0285c.png)
+
+
 # Procedure:
 ```ruby
 .MODEL SMALL
-.STACK 100H
+```
+* .model small tells the assembler that you intend to use the small memory model as one code segment, one data segment and one stack segment  and the values of the segment registers are never changed.
 
+```ruby
+.STACK 100H
+```
+* stack 100h reserves 100h bytes for stack.
+```ruby
 .DATA    
 
 VAR1 DB '                ...*** WELCOME TO YOUR QUIZ ****...$'
@@ -65,7 +73,17 @@ QA9 DB '   a) subtraction    b) division    c) addition$'
 Q10 DB '10. PUSH operation$'
 QA10 DB '   a) decrements SP    b) increments SP    c) increments SS$'  
 ```
-* For printing our desired strings, we have built up 10 variables from VAR1 to VAR11, and we have also utilised Q1 to Q10 and QA1 to QA10 for printing our desired questions and their answers.
+
+* For printing our desired strings, we have built up 10 variables from VAR1 to VAR11 to print the messages in the quiz ,and we have also made variables from  Q1 to Q10 and QA1 to QA10 for printing our desired questions and their answers.
+
+```ruby
+
+ MOV AX,@DATA        ;INITIALIZE DATA SEGMENT register
+ MOV DS,AX
+
+```
+* When the program starts, its DS points to Program Segment Prefix structure, not to the data segment of our program. When was the segment declared, assembler also created a relocatable symbol with corresponding name, such as @data or data, which can be used in our program to initialize data segment register. 
+
 ```ruby
 START:
 	MOV BL, 0  
@@ -79,7 +97,7 @@ START:
 	JE QSN1
 	JNE START
 ```
-* We have now reached the first level. We started by printing a new line, and after that, we used an input to compare the carriage return. It will move to the QSN1 level if it is equal.
+* We have now reached the first level. We started by printing a new line, and after that, we used an input to compare the ascii of enter key. It will move to the QSN1 level if it is equal and jump to start if any key except enter key.
 ```ruby
 QSN1:
 	CALL NL
@@ -97,7 +115,7 @@ QSN1:
 	JE QSN2
  	JNE QSNW2      
 ```
-* We shall now address the query. We'll pick 1 level and 1 input, and we'll compare it to the right response. The QSN2 level will be reached if it is equal; else, the QSNW2 level will be reached.
+* We move the address of first question into DX. We'll take 1 input, and we'll compare it to the right answer. The QSN2 level will be reached if it is equal; else, the QSNW2 level will be reached.
 ```ruby
  QSN2:
 	CALL NL
@@ -143,7 +161,7 @@ EXITW:
 	
 	JMP EXIT1
  ```
-* we added 48 with BL:To convert number into ascii then the inner ascii converted into decimal in the exit level to make the user's understanding of the marks achieved easier.
+* we added 48 with BL: To convert number into ascii then the inner ascii converted into decimal in the exit level to make the user's understanding of the marks achieved easier.
 
 # Program Phases:
 
